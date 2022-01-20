@@ -13,4 +13,4 @@ ASP.NET CORE &amp; DAPPER
 #
 ![github](/PortfolioApp.Web/wwwroot/Project Images/6.PNG)
 #
-![github](/PortfolioApp.Web/wwwroot/Project Images/7.PNG)
+![github](/PortfolioApp.Web/Project Images/7.PNG)
