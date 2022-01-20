@@ -11,7 +11,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioApp.DTO", "Portfol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioApp.Business", "PortfolioApp.Business\PortfolioApp.Business.csproj", "{2654198C-DD4C-40A5-9068-DE61386D43C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioApp.Web", "PortfolioApp.Web\PortfolioApp.Web.csproj", "{29F1B291-EAE5-4A7B-BCB8-5DF0138991B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioApp.Web", "PortfolioApp.Web\PortfolioApp.Web.csproj", "{29F1B291-EAE5-4A7B-BCB8-5DF0138991B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project Images", "Project Images", "{39FCF6C8-CEA4-4272-8D8F-EC0CF8EEC42A}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\Projeler\Dapper Mvc\1.PNG = ..\..\..\Desktop\Projeler\Dapper Mvc\1.PNG
+		..\..\..\Desktop\Projeler\Dapper Mvc\2.PNG = ..\..\..\Desktop\Projeler\Dapper Mvc\2.PNG
+		..\..\..\Desktop\Projeler\Dapper Mvc\3.PNG = ..\..\..\Desktop\Projeler\Dapper Mvc\3.PNG
+		..\..\..\Desktop\Projeler\Dapper Mvc\4.PNG = ..\..\..\Desktop\Projeler\Dapper Mvc\4.PNG
+		..\..\..\Desktop\Projeler\Dapper Mvc\5.PNG = ..\..\..\Desktop\Projeler\Dapper Mvc\5.PNG
+		..\..\..\Desktop\Projeler\Dapper Mvc\6.PNG = ..\..\..\Desktop\Projeler\Dapper Mvc\6.PNG
+		..\..\..\Desktop\Projeler\Dapper Mvc\7.PNG = ..\..\..\Desktop\Projeler\Dapper Mvc\7.PNG
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
