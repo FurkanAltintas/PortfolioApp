@@ -1,0 +1,23 @@
+﻿@model List<CertificationGetDto>
+
+@{
+    DateTime? date_ = null;
+}
+
+<div class="award section second" id="achievements">
+    <div class="container">
+        <h1>Award &amp;<br>Achievements</h1>
+
+        @foreach (var date in Model.Where(d => d.DateTime != date_))
+        {
+            <ul class="award-list list-flat">
+                <li>@date.DateTime.ToString("Y")</li>
+                @foreach (var certification in Model.Where(c => c.DateTime == date.DateTime))
+                {
+                    <li>@certification.Description</li>
+                    date_ = certification.DateTime;
+                }
+            </ul>
+        }
+    </div>
+</div>

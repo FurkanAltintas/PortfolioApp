@@ -1,0 +1,35 @@
+﻿@model SocialMediaIconAddDto
+
+@{
+    ViewData["Title"] = "SocialMedia Insert";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+    string group = "form-group";
+    string control = "form-control";
+}
+
+<form asp-action="Insert" method="post">
+
+    <div class="@group">
+        <label asp-for="Link">
+            Link
+            <span asp-validation-for="Link"></span>
+        </label>
+        <input asp-for="Link" class="@control" />
+    </div>
+
+    <div class="@group">
+        <label asp-for="Icon">
+            Icon
+            <span asp-validation-for="Icon"></span>
+        </label>
+        <input asp-for="Icon" class="@control" />
+        <em>Icon türü örnek: fa fa-facebook</em>
+    </div>
+
+    <div class="@group">
+        <button type="submit" class="btn btn-success btn-sm">Social Media Insert</button>
+    </div>
+
+</form>
+

@@ -1,0 +1,59 @@
+﻿@model ExperienceUpdateDto
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+    string group = "form-group";
+    string control = "form-control";
+}
+
+<form asp-action="Edit" method="post">
+
+
+
+    <div class="@group">
+        <label asp-for="Title">
+            Title
+            <span asp-validation-for="Title"></span>
+        </label>
+        <input asp-for="Title" class="@control" />
+    </div>
+
+    <div class="@group">
+        <label asp-for="SubTitle">
+            SubTitle
+            <span asp-validation-for="SubTitle"></span>
+        </label>
+        <input asp-for="SubTitle" class="@control" />
+    </div>
+
+    <div class="@group">
+        <label asp-for="Description">
+            Description
+            <span asp-validation-for="Description"></span>
+        </label>
+        <textarea asp-for="Description" class="@control" cols="5" rows="5"></textarea>
+    </div>
+
+    <div class="@group">
+        <label asp-for="StartDate">
+            Start Date
+            <span asp-validation-for="StartDate"></span>
+        </label>
+        <input asp-for="StartDate" class="@control" type="date" />
+    </div>
+
+    <div class="@group">
+        <label asp-for="EndDate">
+            End Date
+            <span asp-validation-for="EndDate"></span>
+        </label>
+        <input asp-for="EndDate" class="@control" type="date" />
+    </div>
+
+    <div class="@group">
+        <button type="submit" class="btn btn-success btn-sm">Experience Edit</button>
+    </div>
+
+</form>

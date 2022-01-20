@@ -1,0 +1,88 @@
+﻿@model UserUpdateModel
+
+@{
+    ViewData["Title"] = "User Update";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+    string danger = "text-danger";
+    string group = "form-group";
+    string control = "form-control";
+}
+
+<form asp-action="Index" method="post" enctype="multipart/form-data">
+    @* Belirtmezsek ilgili taşıdığımız dosya null olarak gelir *@
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="@group">
+        <label asp-for="FirstName">
+            First Name
+            <span class="text-danger" asp-validation-for="FirstName"></span>
+        </label>
+        <input asp-for="FirstName" class="@control" />
+    </div>
+
+    <div class="@group">
+        <label asp-for="LastName">
+            Last Name
+            <span class="@danger" asp-validation-for="LastName"></span>
+        </label>
+        <input asp-for="LastName" class="@control" />
+    </div>
+
+    <div class="@group">
+        <label asp-for="Email">
+            Email
+            <span class="@danger" asp-validation-for="Email"></span>
+        </label>
+        <input asp-for="Email" class="@control" />
+    </div>
+
+    <div class="@group">
+        <label asp-for="Phone">
+            Phone Number
+            <span class="@danger" asp-validation-for="Phone"></span>
+        </label>
+        <input asp-for="Phone" class="@control" />
+    </div>
+
+    <div class="@group">
+        <label asp-for="Description">
+            Description
+            <span class="@danger" asp-validation-for="Description"></span>
+        </label>
+        <textarea asp-for="Description" cols="5" rows="5" class="@control"></textarea>
+    </div>
+
+    <div class="@group">
+        <label asp-for="Address">Address
+                        <span class="@danger" asp-validation-for="Address"></span>
+        </label>
+        <textarea asp-for="Address" cols="5" rows="5" class="@control"></textarea>
+    </div>
+
+    <div class="@group row">
+        <div class="col-6">
+            @if (!string.IsNullOrWhiteSpace(Model.ImageUrl))
+            {
+                <label>Eski Resim</label>
+                <img src="~/img/@Model.ImageUrl" alt="@Model.FirstName @Model.LastName" style="height: 10rem!important;" />
+            }
+            else
+            {
+                <div class="alert alert-danger text-center">
+                    Herhangi bir resim sistemde kayıtlı değildir
+                </div>
+            }
+        </div>
+        <div class="col-6">
+            <label>Resim Seçiniz</label>
+            <input asp-for="Picture" type="file" class="@control" />
+        </div>
+    </div>
+
+    <div class="@group">
+        <button type="submit" class="btn btn-success">Update</button>
+    </div>
+
+</form>

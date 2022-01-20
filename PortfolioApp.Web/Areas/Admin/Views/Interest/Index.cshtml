@@ -1,0 +1,51 @@
+﻿@model InterestViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+        int i = 0;
+}
+
+
+@if (Model.Interests.Count() != 0)
+{
+    <table class="table align-items-center mb-0">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Description</th>
+                <th width="25%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var interest in Model.Interests)
+            {
+                i++;
+                <tr>
+                    <td>@i</td>
+                    <td>@interest.Description</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@interest.Id" class="btn btn-warning btn-sm">Edit</a>
+                        <a onclick="return confirm('Silmek istediğinizden emin misiniz ?')" asp-action="Delete" asp-route-id="@interest.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>Description</th>
+                <th width="25%"></th>
+            </tr>
+        </tfoot>
+    </table>
+}
+else
+{
+    <div class="alert alert-danger">
+        <b>İlgi alanları bulunmamaktadır</b>
+    </div>
+}
+
+<a asp-action="Insert" class="btn btn-success btn-sm">Interest Insert</a>

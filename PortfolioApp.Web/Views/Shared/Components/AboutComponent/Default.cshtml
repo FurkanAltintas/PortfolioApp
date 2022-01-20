@@ -1,0 +1,18 @@
+﻿@model UserListDto
+
+<div class="intro section" id="about">
+		<div class="container">
+			<p>Hi, I’m @Model.FirstName @Model.LastName</p>
+			<div class="units-row units-split wrap">
+				<div class="unit-20">
+					<img src="~/img/@Model.ImageUrl" alt="Avatar">
+				</div>
+				<div class="unit-80">
+					<h1>I live in<br><span id="typed"></span></h1>
+				</div>
+				<p>
+					@Model.Description
+				</p>
+			</div>
+		</div>
+	</div>

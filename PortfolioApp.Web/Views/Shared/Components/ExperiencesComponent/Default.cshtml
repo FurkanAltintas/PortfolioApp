@@ -1,0 +1,16 @@
+﻿@model List<ExperienceListDto>
+
+<div class="work section second" id="experiences">
+    <div class="container">
+        <h1>Work<br>Experiences</h1>
+
+        @foreach (var experience in Model)
+        {
+            <ul class="work-list">
+                <li>@experience.StartDate.ToString("Y") - @(experience.EndDate == null ? "Devam Ediyor" : experience.EndDate.Value.ToString("Y"))</li>
+                <li><a href="#">@experience.Title - @experience.SubTitle</a></li>
+                <li>@experience.Description</li>
+            </ul>
+        }
+    </div>
+</div>

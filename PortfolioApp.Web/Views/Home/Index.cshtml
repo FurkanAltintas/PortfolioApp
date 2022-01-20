@@ -1,0 +1,26 @@
+﻿@model List<PortfolioApp.Entities.Concrete.Skill>
+
+@{
+    ViewData["Title"] = "Portfolio - Furkan Altıntaş";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+	<!-- Navigation -->
+	@await Component.InvokeAsync("NavbarComponent")
+
+	<!-- Introduction -->
+	@await Component.InvokeAsync("AboutComponent")
+
+	<!-- Work Experience -->
+	@await Component.InvokeAsync("ExperiencesComponent")
+
+	<!-- Award & Achievements -->
+	@await Component.InvokeAsync("AchievementComponent")
+
+	<!-- Technical Skills -->
+	@await Component.InvokeAsync("SkillComponent")
+
+	<!-- Quote -->
+	@await Html.PartialAsync("_QuotePartial")
+
+	@await Component.InvokeAsync("FooterComponent")

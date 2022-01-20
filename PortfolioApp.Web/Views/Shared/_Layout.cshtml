@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio - Furkan Altıntaş</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Draco is free PSD &amp; HTML template by furkanaltintas">
+    <meta name="author" content="Furkan Altıntaş">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/Web/css/kube.min.css" />
+    <link rel="stylesheet" href="~/Web/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/Web/css/custom.min.css" />
+    <link rel="shortcut icon" href="~/Web/img/favicon.png" />
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<style>
+		.intro h1:before {
+			/* Edit this with your name or anything else */
+			content: 'FURKAN';
+		}
+	</style>
+</head>
+<body>
+
+	@RenderBody()
+
+	<!-- Javascript -->
+	<script src="~/Web/js/jquery.min.js"></script>
+	<script src="~/Web/js/typed.min.js"></script>
+    <script src="~/Web/js/kube.min.js"></script>
+    <script src="~/Web/js/site.js"></script>
+    <script>
+		function newTyped(){}$(function(){$("#typed").typed({
+		// Change to edit type effect
+		strings: ["student", "dotnet developer", "web developer"],
+
+		typeSpeed:90,backDelay:700,contentType:"html",loop:!0,resetCallback:function(){newTyped()}}),$(".reset").click(function(){$("#typed").typed("reset")})});
+    </script>
+</body>
+</html>

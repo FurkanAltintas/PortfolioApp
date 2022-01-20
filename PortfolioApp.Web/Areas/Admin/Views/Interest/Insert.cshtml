@@ -1,0 +1,25 @@
+﻿@model InterestAddDto
+
+@{
+    ViewData["Title"] = "Insert";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+    string group = "form-group";
+    string control = "form-control";
+}
+
+<form asp-action="Insert" method="post">
+
+    <div class="@group">
+        <label asp-for="Description">Description
+            <span asp-validation-for="Description"></span>
+        </label>
+        <input asp-for="Description" class="@control" />
+    </div>
+
+    <div class="@group">
+        <button type="submit" class="btn btn-success btn-sm">Interest Insert</button>
+    </div>
+
+</form>
+

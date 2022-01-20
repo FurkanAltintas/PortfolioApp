@@ -1,0 +1,67 @@
+﻿@model ExpeirenceListViewModel
+
+@{
+    ViewData["Title"] = "Experience List";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+    int i = 0;
+}
+
+
+@if (Model.Expeirences.Count() != 0)
+{
+    <table class="table align-items-center mb-0">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>SubTitle</th>
+                <th>Description</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th width="25%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var experience in Model.Expeirences)
+            {
+                i++;
+                <tr>
+                    <td>@i</td>
+                    <td>@experience.Title</td>
+                    <td>@experience.SubTitle</td>
+                    <td>@experience.Description</td>
+                    <td>@experience.StartDate.ToString("Y")</td>
+                    <td>
+                        @(experience.EndDate != null
+                ? experience.EndDate.Value.ToString("Y")
+                : "Devam Ediyor...")
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@experience.Id" class="btn btn-warning btn-sm">Edit</a>
+                        <a onclick="return confirm('Silmek istediğinizden emin misiniz ?')" asp-action="Delete" asp-route-id="@experience.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>SubTitle</th>
+                <th>Description</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th width="25%"></th>
+            </tr>
+        </tfoot>
+    </table>
+}
+else
+{
+    <div class="alert alert-danger">
+        <b>Deneyim bilgisi bulunmamaktadır</b>
+    </div>
+}
+
+<a asp-action="Insert" class="btn btn-success btn-sm">Expeirence Insert</a>

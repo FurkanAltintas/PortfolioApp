@@ -1,0 +1,70 @@
+﻿@model EducationListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+    int i = 0;
+}
+
+
+@if (Model.Educations.Count() != 0)
+{
+    <table class="table align-items-center mb-0">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>SubTitle</th>
+                <th>Description</th>
+                <th>Grade</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th width="25%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var certification in Model.Educations)
+            {
+                i++;
+                <tr>
+                    <td>@i</td>
+                    <td>@certification.Title</td>
+                    <td>@certification.SubTitle</td>
+                    <td>@certification.Description</td>
+                    <td>@certification.Grade</td>
+                    <td>@certification.StartDate.ToString("Y")</td>
+                    <td>
+                        @(certification.EndDate != null
+                ? certification.EndDate.Value.ToString("Y")
+                : "Devam Ediyor...")
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@certification.Id" class="btn btn-warning btn-sm">Edit</a>
+                        <a onclick="return confirm('Silmek istediğinizden emin misiniz ?')" asp-action="Delete" asp-route-id="@certification.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>SubTitle</th>
+                <th>Description</th>
+                <th>Grade</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th width="25%"></th>
+            </tr>
+        </tfoot>
+    </table>
+}
+else
+{
+    <div class="alert alert-danger">
+        <b>Eğitim bilgisi bulunmamaktadır</b>
+    </div>
+}
+
+<a asp-action="Insert" class="btn btn-success btn-sm">Education Insert</a>
