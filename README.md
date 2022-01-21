@@ -41,5 +41,3 @@ A simple portfolio project made for learning Dapper.
 
 #### Admin Dashboard
 ![github](/PortfolioApp.Web/wwwroot/Project_Images/7.PNG)
-
-####  <h3 style="text-align:right;">End</h3>
