@@ -1,25 +1,32 @@
 ﻿@model List<SkillGetCategoryListDto>
 
-@{
-    int i = 0;
-}
 <div class="skills section second" id="skills">
     <div class="container">
         <h1>Technical<br>Skills</h1>
-
-        @foreach (var category in Model.Where(x => x.CategoryId != i))
+        @foreach (var skill in Model)
         {
-            i = 0;
             <ul class="skill-list list-flat">
-                <li>@category.Name</li>
-                <li>
-                    @foreach (var skill in Model.Where(x => x.SkillCategoryId == category.CategoryId))
-                    {
-                        @skill.Description <text> / </text>
-                        i = skill.SkillCategoryId;
-                    }
-                </li>
+                <li>@skill.Name</li>
+                <li>@skill.Skills</li>
             </ul>
         }
+
+
+
+        @*                      ESKİ YÖNTEM                       *@
+        @*    @foreach (var category in Model.Where(x => x.CategoryId != i))
+            {
+            i = 0;
+            <ul class="skill-list list-flat">
+            <li>@category.Name</li>
+            <li>
+            @foreach (var skill in Model.Where(x => x.SkillCategoryId == category.CategoryId))
+            {
+            @skill.Description <text> / </text>
+            i = skill.SkillCategoryId;
+            }
+            </li>
+            </ul>
+            }*@
     </div>
 </div>

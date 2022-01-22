@@ -20,7 +20,15 @@ namespace PortfolioApp.DataAccess.Concrete.Dapper
 
         public List<Skill> JoinCategory()
         {
-            return _connection.Query<Skill>("Select s.Id, c.Id as CategoryId, s.CategoryId as SkillCategoryId, c.Name, s.Description from Skills s Join SkillCategories c ON s.CategoryId=c.Id").ToList();
+            return _connection.Query<Skill>(@"SELECT c.Name, S.Skills FROM SkillCategories c
+                                            CROSS APPLY(
+	                                        SELECT s.Description + ' / ' AS [text()] FROM Skills s
+	                                        WHERE c.Id = s.CategoryId
+	                                        FOR XML PATH('')
+	                                        ) S(Skills)").ToList();
+
+            
+            //return _connection.Query<Skill>("Select s.Id, c.Id as CategoryId, s.CategoryId as SkillCategoryId, c.Name, s.Description from Skills s Join SkillCategories c ON s.CategoryId=c.Id").ToList();
         }
     }
 }
